@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,15 +7,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Elokuvakirjasto</title>
     </head>
-    <body>
-        <h1>Oma Heroku-sovellus!</h1>
-            <!-- Hyödyllisiä kirjastoja -->
-            <script src="bower_components/angular/angular.min.js"></script>
-            <script src="bower_components/angular-route/angular-route.min.js"></script>
-            <script src="bower_components/firebase/firebase.js"></script>
-            <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <body ng-app="MovieApp">
+        
+        <div ng-view></div>
 
-            <!-- Linkitä omat tiedostosi tähän (huomaa, että polun juuri on web-kansio!) -->
-            <script src="app/app.js"></script>    
+        <!-- Hyödyllisiä kirjastoja -->
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-validation-match/dist/angular-input-match.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/firebase/firebase.js"></script>
+        <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+
+        <!-- Linkitä omat tiedostosi tähän (huomaa, että polun juuri on web-kansio!) -->
+        <script src="app/app.js"></script>
+        <script src="app/services/firebase_service.js"></script>
+        <script src="app/controllers/list_controller.js"></script>
+        <script src="app/controllers/add_controller.js"></script>
+        
     </body>
 </html>
