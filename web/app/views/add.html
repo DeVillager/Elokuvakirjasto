@@ -1,0 +1,55 @@
+
+<html>
+    <head>
+        <title>lisayssivu</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <form name="regForm">
+            <div ng-controller="AddController">
+                <h1>Lisää uusi elokuva</h1>
+                <div id="add-movie-container">
+                    <p>
+                        <label>Nimi</label>
+                        <input type="text" ng-model="nimi" name="nimi" required ng-pattern="/^[a-z]{2,}$/">
+                    </p>
+                    <div ng-show="regForm.nimi.$invalid && regForm.nimi.$dirty">Nimi ei kelpaa!</div>
+
+                    <p>
+                        <label>Ohjaaja</label>
+                        <input type="text" ng-model="ohjaaja" name="ohjaaja" required ng-pattern="/^[a-z]{2,}$/">
+                    </p>
+                    <div ng-show="regForm.ohjaaja.$invalid && regForm.ohjaaja.$dirty">Ohjaaja ei kelpaa!</div>
+
+                    <p>
+                        <label>Julkaisuvuosi</label>
+                        <input type="text" ng-model="vuosi" name="vuosi" required ng-pattern="/^(19|20)\d{2}$/">
+                    </p>
+                    <div ng-show="regForm.vuosi.$invalid && regForm.vuosi.$dirty">Vuosi ei kelpaa!</div>
+
+                    <p>
+                        <label>Kuvaus</label>
+                        <textarea ng-model="kuvaus" name="kuvaus" required ng-pattern="/^[a-z]{10,}$/"></textarea>
+                    </p>
+                    <div ng-show="regForm.kuvaus.$invalid && regForm.kuvaus.$dirty">Anna pidempi kuvaus!</div>
+
+                    <button ng-click="addMovie()" type="submit" ng-disabled="regForm.$invalid">Lisää</button>
+                    <button ng-click="cancel()">Älä lisääkään</button>
+                    <button ng-click="removeAllMovies()">Poista kaikki</button>
+                </div>
+
+                <div id="list-movie-container">
+                    <div ng-repeat="movie in movies">
+                        <strong>{{movie.nimi}} ({{movie.vuosi}})</strong>, ohjannut {{movie.ohjaaja}}
+                        <div>
+                            Kuvaus: </br>
+                            {{movie.kuvaus}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>    
+    </body>
+</html>
