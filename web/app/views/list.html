@@ -1,12 +1,13 @@
 <h1>Elokuvat</h1>
 <div id="list-movie-container">
     <div ng-repeat="movie in movies">
-        <strong>{{movie.nimi}} ({{movie.vuosi}})</strong>, ohjannut {{movie.ohjaaja}}
+        <a ng-href="#/movies/{{movie.$id}}"><strong>{{movie.nimi}}</strong></a> <strong>({{movie.vuosi}})</strong>, ohjannut {{movie.ohjaaja}}
         <div>
             Kuvaus: </br>
             {{movie.kuvaus}}
         </div>
         <button ng-click="remove(movie)">Poista</button>
+        <br></br>
     </div>
     <button ng-click="newMovie()">Uusi leffa</button>
 </div>

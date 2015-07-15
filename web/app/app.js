@@ -15,8 +15,17 @@ MovieApp.config(function ($routeProvider) {
                 controller: 'AddController',
                 templateUrl: 'app/views/add.html'
             })
+            .when('/movies/:id', {
+                controller: 'ShowController',
+                templateUrl: 'app/views/show.html'
+            })
+            .when('/movies/:id/edit', {
+                controller: 'EditController',
+                templateUrl: 'app/views/edit.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });
     // Lisää reitit tänne
 });
+
