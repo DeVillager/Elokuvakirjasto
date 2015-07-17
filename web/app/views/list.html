@@ -1,5 +1,7 @@
-<h1>Elokuvat</h1>
+<h1>Elokuvakirjasto</h1>
 <div id="list-movie-container">
+
+    <h2>Omat elokuvat</h2>
     <div ng-repeat="movie in movies">
         <a ng-href="#/movies/{{movie.$id}}"><strong>{{movie.nimi}}</strong></a> <strong>({{movie.vuosi}})</strong>, ohjannut {{movie.ohjaaja}}
         <div>
@@ -10,4 +12,22 @@
         <br></br>
     </div>
     <button ng-click="newMovie()">Uusi leffa</button>
+    <br></br>
+
+    <h2>IMDb:n haku</h2>
+    <label>Minkä niminen?</label><input type="text" ng-model="etsiNimi">
+    <br></br>
+    <label>Minä vuonna?</label><input type="text" ng-model="etsiVuosi">
+    <button ng-click="find()">Etsi</button>
+    <br></br>
+    <div>
+        <span ng-pluralize count="found" when="{ '0': 'Hakusanalla ei löytynyt elokuvia', 'one': 'Haulla löytyi 1 elokuva', 'other': 'Haulla löytyi {{found}} elokuvaa' }"></span>.
+    </div>
+    <br></br>
+    <div ng-repeat="movie in imdb">
+        <a href="http://www.imdb.com/title/{{movie.imdbID}}"><strong>{{movie.Title}}</strong></a> <strong>({{movie.Year}})</strong>
+        <br></br>
+    </div>
+
 </div>
+

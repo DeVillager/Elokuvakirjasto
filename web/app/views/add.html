@@ -13,13 +13,13 @@
                 <div id="add-movie-container">
                     <p>
                         <label>Nimi</label>
-                        <input type="text" ng-model="nimi" name="nimi" required ng-pattern="/^[a-z]{2,}$/">
+                        <input type="text" ng-model="nimi" name="nimi" ng-trim="false" required ng-pattern="/^[a-zåäöA-ZÅÄÖ0-9_!#%&/()=?.:\s]{2,}$/">
                     </p>
                     <div ng-show="regForm.nimi.$invalid && regForm.nimi.$dirty">Nimi ei kelpaa!</div>
 
                     <p>
                         <label>Ohjaaja</label>
-                        <input type="text" ng-model="ohjaaja" name="ohjaaja" required ng-pattern="/^[a-z]{2,}$/">
+                        <input type="text" ng-model="ohjaaja" name="ohjaaja" required ng-pattern="/^[a-zåäöA-ZÅÄÖ\s]{2,}$/">
                     </p>
                     <div ng-show="regForm.ohjaaja.$invalid && regForm.ohjaaja.$dirty">Ohjaaja ei kelpaa!</div>
 
@@ -31,7 +31,7 @@
 
                     <p>
                         <label>Kuvaus</label>
-                        <textarea ng-model="kuvaus" name="kuvaus" required ng-pattern="/^[a-z]{10,}$/"></textarea>
+                        <textarea ng-model="kuvaus" name="kuvaus" required ng-pattern="/^[a-zåäöA-ZÅÄÖ0-9!#%&/()=?.:\s]{10,}$/"></textarea>
                     </p>
                     <div ng-show="regForm.kuvaus.$invalid && regForm.kuvaus.$dirty">Anna pidempi kuvaus!</div>
 

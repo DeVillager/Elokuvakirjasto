@@ -27,5 +27,12 @@ MovieApp.config(function ($routeProvider) {
                 redirectTo: '/'
             });
     // Lisää reitit tänne
-});
+}
+//, ['$httpProvider', function ($httpProvider) {
+//        delete $httpProvider.defaults.headers.common["X-Requested-With"];
+);
+
+MovieApp.config(['$httpProvider', function($httpProvider) {
+  delete $httpProvider.defaults.headers.common["X-Requested-With"]
+}]);
 
