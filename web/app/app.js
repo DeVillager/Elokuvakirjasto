@@ -1,6 +1,10 @@
 // Toteuta moduulisi tänne
 var MovieApp = angular.module('MovieApp', ['firebase', 'ngRoute']);
 
+MovieApp.config(['$httpProvider', function($httpProvider) {
+  delete $httpProvider.defaults.headers.common["X-Requested-With"]
+}]);
+
 MovieApp.config(function ($routeProvider) {
     $routeProvider
             .when('/', {
@@ -32,7 +36,5 @@ MovieApp.config(function ($routeProvider) {
 //        delete $httpProvider.defaults.headers.common["X-Requested-With"];
 );
 
-MovieApp.config(['$httpProvider', function($httpProvider) {
-  delete $httpProvider.defaults.headers.common["X-Requested-With"]
-}]);
+
 
