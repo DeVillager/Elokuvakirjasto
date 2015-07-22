@@ -11,8 +11,8 @@ MovieApp.controller('LoginController', function ($scope, currentAuth, $location,
 //    $scope.carryOn = function () {
 //        $location.path('/movies');
 //    }
-    $scope.email = "tommi.m@hotmail.com";
-    $scope.password = "Pikmin12";
+    $scope.email = "itavuo@kajaani.fi";
+    $scope.password = "Itis";
 //    $rootScope.userLoggedIn = AuthenticationService.getUserLoggedIn();
 
     $scope.logIn = function () {
