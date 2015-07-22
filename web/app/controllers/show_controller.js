@@ -1,4 +1,10 @@
-MovieApp.controller('ShowController', function ($scope, $routeParams, FirebaseService, $location) {
+MovieApp.controller('ShowController', function ($scope, currentAuth, $routeParams, FirebaseService, $location) {
+    
+    if (!currentAuth) {
+//        alert(currentAuth);
+        $location.path('/');
+    }
+    
     $scope.movies = [];
     $scope.movies = FirebaseService.getMovies();
     
@@ -9,7 +15,7 @@ MovieApp.controller('ShowController', function ($scope, $routeParams, FirebaseSe
     });
 
     $scope.return = function () {
-        $location.path('/');
+        $location.path('/movies');
     };
 
     $scope.edit = function () {

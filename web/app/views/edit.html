@@ -16,16 +16,14 @@
                 
                 <p>
                     <label>Nimi:</label>
-                    <input type="text" ng-model="nimi" name="nimi"  required ng-pattern="/^[a-zåäöA-ZÅÄÖ0-9!#%&/()=?.:\s]{2,}$/">
+                    <input type="text" ng-model="nimi" name="nimi" required="">
                 </p>
-                <div ng-show="regForm.nimi.$invalid && regForm.nimi.$dirty">Nimi ei kelpaa!</div>
                 </br>
                 
                 <p>
                     <label>Ohjaaja:</label>
-                    <input type="text" ng-model="ohjaaja" name="ohjaaja" required ng-pattern="/^[a-zåäöA-ZÅÄÖ\s]{2,}$/">
+                    <input type="text" ng-model="ohjaaja" name="ohjaaja" required="">
                 </p>
-                <div ng-show="regForm.ohjaaja.$invalid && regForm.ohjaaja.$dirty">Ohjaaja ei kelpaa!</div>
                 </br>
                 
                 <p>
@@ -37,7 +35,7 @@
                 
                 <p>
                     <label>Kuvaus:</label></br>
-                    <textarea type="text" ng-model="kuvaus" name="kuvaus" class="comments" required ng-pattern="/^[a-zåäöA-ZÅÄÖ0-9!#%&/()=?.:\s]{10,}$/"></textarea>
+                    <textarea type="text" ng-model="kuvaus" name="kuvaus" class="comments"></textarea>
                 </p>
                 <div ng-show="regForm.kuvaus.$invalid && regForm.kuvaus.$dirty">Anna pidempi kuvaus!</div>
                 </br>

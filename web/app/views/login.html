@@ -1,0 +1,34 @@
+
+<html>
+    <head>
+        <title>Kirjaudu sisään</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Kirjaudu sisään</h1>
+        <p>
+            <label>Email</label>
+            <input type="text" ng-model="email">
+        </p>
+        
+        <p>
+            <label>Password</label>
+            <input type="text" ng-model="password">
+        </p>
+        <button ng-click="logIn()">Kirjaudu sisään</button>
+        
+        <p>
+            <label>New email</label>
+            <input type="text" ng-model="newEmail">
+        </p>
+        
+        <p>
+            <label>New Password</label>
+            <input type="text" ng-model="newPassword">
+        </p>
+        <button ng-click="register()">Rekisteröidy</button>
+        
+        <div> {{message}} </div>
+    </body>
+</html>

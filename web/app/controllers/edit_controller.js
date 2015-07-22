@@ -1,15 +1,24 @@
 MovieApp.controller('EditController', function ($scope, $routeParams, FirebaseService, $location) {
+    
+    
+//    alert($routeParams.id);
+//    if (!currentAuth) {
+////        alert(currentAuth);
+//        $location.path('/');
+//    }
+//    $scope.movie = FirebaseService.getMovies()[0];
     $scope.movies = [];
     $scope.movies = FirebaseService.getMovies();
 //    $scope.movie = null;
-    var movie = null;
+//    var movie = null;
 
 
     FirebaseService.getMovie($routeParams.id, function (data) {
         if (data !== null) {
             $scope.movie = data;
+//            alert($scope.movie.nimi);
         } else {
-            $scope.movie = $scope.movies[0];
+//            $scope.movie = $scope.movies[0];
         }
 
         if ($scope.movie.nimi) {
@@ -36,6 +45,7 @@ MovieApp.controller('EditController', function ($scope, $routeParams, FirebaseSe
             $scope.vuosi = '1900';
             $scope.movie.vuosi = '1900';
         }
+//        alert($scope.movie.nimi);
 //        $scope.ohjaaja = $scope.movie.ohjaaja;
 //        $scope.vuosi = $scope.movie.vuosi;
 //        $scope.kuvaus = $scope.movie.kuvaus;

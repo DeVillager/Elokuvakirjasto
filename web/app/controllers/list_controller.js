@@ -1,4 +1,12 @@
-MovieApp.controller('ListController', function ($scope, $routeParams, FirebaseService, APIService, $location) {
+MovieApp.controller('ListController', function ($scope, currentAuth, $routeParams, FirebaseService, APIService, $location) {
+
+    if (!currentAuth) {
+//        alert(currentAuth);
+        $location.path('/');
+    }
+
+//    alert(currentAuth);
+
     $scope.movies = [];
     $scope.imdb = [];
     $scope.found = 0;
@@ -10,6 +18,9 @@ MovieApp.controller('ListController', function ($scope, $routeParams, FirebaseSe
 //    APIService.findMovie('').success(function (movies) {
 //        $scope.movies = movies;
 //    });
+    $scope.testaa = function () {
+        $scope.message = currentAuth;
+    }
 
     $scope.newMovie = function () {
         $location.path('/movies/new');
@@ -28,7 +39,7 @@ MovieApp.controller('ListController', function ($scope, $routeParams, FirebaseSe
         $scope.imdb = [];
         APIService.findMovie($scope.etsiNimi, $scope.etsiVuosi).success(function (movies) {
 
-                $scope.imdb = movies.Search;
+            $scope.imdb = movies.Search;
 
             if ($scope.imdb.length) {
                 $scope.found = $scope.imdb.length;

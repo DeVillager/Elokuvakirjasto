@@ -10,6 +10,7 @@
     <body ng-app="MovieApp">
         
         <div ng-view></div>
+        <button ng-click="logOut()" ng-if="userLoggedIn">Kirjaudu ulos</button>
 
         <!-- Hyödyllisiä kirjastoja -->
         <script src="bower_components/angular/angular.min.js"></script>
@@ -21,10 +22,13 @@
         <script src="app/app.js"></script>
         <script src="app/services/firebase_service.js"></script>
         <script src="app/services/api_service.js"></script>
+        <script src="app/services/auth_service.js"></script>
+        
         <script src="app/controllers/list_controller.js"></script>
         <script src="app/controllers/add_controller.js"></script>
         <script src="app/controllers/show_controller.js"></script>
         <script src="app/controllers/edit_controller.js"></script>
+        <script src="app/controllers/login_controller.js"></script>
         
     </body>
 </html>

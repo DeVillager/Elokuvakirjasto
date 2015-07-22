@@ -1,4 +1,10 @@
 MovieApp.controller('AddController', function ($scope, FirebaseService, $location) {
+    
+//    if (!currentAuth) {
+////        alert(currentAuth);
+//        $location.path('/');
+//    }
+    
     $scope.movies = [];
     $scope.movies = FirebaseService.getMovies();
 
