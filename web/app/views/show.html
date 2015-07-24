@@ -1,10 +1,14 @@
 
 <h1>{{movie.nimi}}</h1>
-<div> ohjannut: {{movie.ohjaaja}}</div>
-<div> julkaisuvuosi: ({{movie.vuosi}})</div>
+<ul>
+    <li><strong>Ohjaaja:</strong> {{movie.ohjaaja}}</li>
+    <li><strong>Julkaisuvuosi:</strong> {{movie.vuosi}}</li>
+</ul>
+
 <div>
-    Kuvaus: </br>
     {{movie.kuvaus}}
 </div>
-<button ng-click="return()">Takaisin</button>
-<button ng-click="edit(movie)" >Muokkaa</button>
+<br></br>
+<button ng-click="edit(movie)" class="btn btn-primary">Muokkaa</button>
+<button ng-click="return()" class="btn btn-default">Takaisin</button>
+

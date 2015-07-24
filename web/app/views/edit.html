@@ -3,44 +3,41 @@
         <title>editsivu</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            .comments { width: 300px; height: 75px }
-        </style>
     </head>
 
     <body>
-        <form name="regForm">
+        <form name="regForm" class="form-group">
             <div ng-controller="EditController">
-                <h1>Muokkaa elokuvaa {{movie.nimi}}</h1>
+                <h1>Muokkaa elokuvaa "{{movie.nimi}}"</h1>
                 
                 
                 <p>
-                    <label>Nimi:</label>
-                    <input type="text" ng-model="nimi" name="nimi" required="">
+                    <label>Nimi:</label></br>
+                    <input type="text" ng-model="nimi" name="nimi" required="" class="form-control">
                 </p>
                 </br>
                 
                 <p>
-                    <label>Ohjaaja:</label>
-                    <input type="text" ng-model="ohjaaja" name="ohjaaja" required="">
+                    <label>Ohjaaja:</label></br>
+                    <input type="text" ng-model="ohjaaja" name="ohjaaja" required="" class="form-control">
                 </p>
                 </br>
                 
                 <p>
-                    <label>Julkaisuvuosi:</label>
-                    <input type="text" ng-model="vuosi" name="vuosi" required ng-pattern="/^(19|20)\d{2}$/">
+                    <label>Julkaisuvuosi:</label></br>
+                    <input type="text" ng-model="vuosi" name="vuosi" class="form-control" required ng-pattern="/^(19|20)\d{2}$/">
                 </p>
                 <div ng-show="regForm.vuosi.$invalid && regForm.vuosi.$dirty">Vuosi ei kelpaa!</div>
                 </br>
                 
                 <p>
                     <label>Kuvaus:</label></br>
-                    <textarea type="text" ng-model="kuvaus" name="kuvaus" class="comments"></textarea>
+                    <textarea type="text" ng-model="kuvaus" name="kuvaus" class="form-control"></textarea>
                 </p>
                 <div ng-show="regForm.kuvaus.$invalid && regForm.kuvaus.$dirty">Anna pidempi kuvaus!</div>
                 </br>
-                <button ng-click="update(movie)" type="submit" ng-disabled="regForm.$invalid">Päivitä</button>
-                <button ng-click="cancel()">Takaisin</button>
+                <button ng-click="update(movie)" type="submit" ng-disabled="regForm.$invalid" class="btn btn-primary">Lisää</button>
+                <button ng-click="cancel()" class="btn btn-default">Takaisin</button>
 
             </div>
         </form>    

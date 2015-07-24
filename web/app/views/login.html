@@ -8,27 +8,27 @@
     <body>
         <h1>Kirjaudu sisään</h1>
         <p>
-            <label>Email</label>
+            <label>Sähköpostiosoite</label><br>
             <input type="text" ng-model="email">
         </p>
-        
         <p>
-            <label>Password</label>
+        <label>Salasana</label><br>
             <input type="text" ng-model="password">
         </p>
-        <button ng-click="logIn()">Kirjaudu sisään</button>
+        <button ng-click="logIn()" class="btn btn-primary">Kirjaudu</button>
         
+        <h1>Rekisteröidy</h1>
         <p>
-            <label>New email</label>
+            <label>Sähköpostiosoite</label><br>
             <input type="text" ng-model="newEmail">
         </p>
-        
+
         <p>
-            <label>New Password</label>
+            <label>Salasana</label><br>
             <input type="text" ng-model="newPassword">
         </p>
-        <button ng-click="register()">Rekisteröidy</button>
-        
+        <button ng-click="register()" class="btn btn-primary">Rekisteröidy</button>
+
         <div> {{message}} </div>
     </body>
 </html>

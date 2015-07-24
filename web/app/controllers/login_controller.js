@@ -2,9 +2,12 @@ MovieApp.controller('LoginController', function ($scope, currentAuth, $location,
     
     $rootScope.userLoggedIn = AuthenticationService.getUserLoggedIn();
     if (!currentAuth) {
-//        alert(currentAuth);
         $location.path('/');
+    } else {
+        $location.path('/movies');
     }
+    
+    
 //    document.getElementById("user").defaultValue = "tommi.m@hotmail.com";
 //    document.getElementById("pass").defaultValue = "Pikmin12";
 ////    $scope.message = 'viesti';

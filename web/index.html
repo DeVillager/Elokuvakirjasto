@@ -1,16 +1,29 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="container-fluid">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="bootstrap-3.3.2-dist/css/bootstrap.min.css">
         <title>Elokuvakirjasto</title>
     </head>
     <body ng-app="MovieApp">
-        
-        <div ng-view></div>
-        <button ng-click="logOut()" ng-if="userLoggedIn">Kirjaudu ulos</button>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid row">
+                <div class="nav navbar-nav navbar-left">
+                    <h1>Elokuvakirjasto  <small>Elokuvat</small></h1>
+                </div>
+                <div class="col-md-12 navbar-right">
+                    <button ng-click="logOut()" class="btn btn-default navbar-btn" style="padding: 15px 10px;" ng-if="userLoggedIn">Kirjaudu ulos</button>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <div ng-view class="center-block"></div>
+
 
         <!-- Hyödyllisiä kirjastoja -->
         <script src="bower_components/angular/angular.min.js"></script>
@@ -23,13 +36,16 @@
         <script src="app/services/firebase_service.js"></script>
         <script src="app/services/api_service.js"></script>
         <script src="app/services/auth_service.js"></script>
-        
+
         <script src="app/controllers/list_controller.js"></script>
         <script src="app/controllers/add_controller.js"></script>
         <script src="app/controllers/show_controller.js"></script>
         <script src="app/controllers/edit_controller.js"></script>
         <script src="app/controllers/login_controller.js"></script>
-        
+
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
+
     </body>
 </html>
 

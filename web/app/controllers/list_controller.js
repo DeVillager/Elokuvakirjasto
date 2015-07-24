@@ -18,9 +18,9 @@ MovieApp.controller('ListController', function ($scope, currentAuth, $routeParam
 //    APIService.findMovie('').success(function (movies) {
 //        $scope.movies = movies;
 //    });
-    $scope.testaa = function () {
-        $scope.message = currentAuth;
-    }
+//    $scope.testaa = function () {
+//        $scope.message = currentAuth;
+//    }
 
     $scope.newMovie = function () {
         $location.path('/movies/new');
