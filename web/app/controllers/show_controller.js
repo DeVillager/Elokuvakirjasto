@@ -90,11 +90,11 @@ CourseApp.controller('ShowController', function ($scope, $routeParams, FirebaseS
                         else if (j === b.length - 1) {
 
                             if (c[i * b.length + j].value > max) {
-                                alert(c[i * b.length + j].value + (max + 1) + (c[i * b.length + j].value > max) + 'joo');
+//                                alert(c[i * b.length + j].value + (max + 1) + (c[i * b.length + j].value > max) + 'joo');
                                 tehtava.gotp = max;
                             }
                             else {
-                                alert(c[i * b.length + j].value + 'jee');
+//                                alert(c[i * b.length + j].value + 'jee');
                                 tehtava.gotp = c[i * b.length + j].value;
                             }
                         }
