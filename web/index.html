@@ -6,16 +6,13 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="bootstrap-3.3.2-dist/css/bootstrap.min.css">
-        <title>Elokuvakirjasto</title>
+        <title>Koetulosten kirjaaminen</title>
     </head>
-    <body ng-app="MovieApp">
+    <body ng-app="CourseApp">
         <nav class="navbar navbar-default">
             <div class="container-fluid row">
                 <div class="nav navbar-nav navbar-left">
-                    <h1>Elokuvakirjasto  <small>Elokuvat</small></h1>
-                </div>
-                <div class="col-md-12 navbar-right">
-                    <button ng-click="logOut()" class="btn btn-default navbar-btn" style="padding: 15px 10px;" ng-if="userLoggedIn">Kirjaudu ulos</button>
+                    <h1>Koetulosten kirjaaminen</h1>
                 </div>
             </div>
         </nav>
@@ -40,14 +37,10 @@
         <script src="app/services/api_service.js"></script>
         <script src="app/services/auth_service.js"></script>
 
-        <script src="app/controllers/list_controller.js"></script>
+        <script src="app/controllers/home_controller.js"></script>
         <script src="app/controllers/add_controller.js"></script>
         <script src="app/controllers/show_controller.js"></script>
-        <script src="app/controllers/edit_controller.js"></script>
-        <script src="app/controllers/login_controller.js"></script>
-
-        
-
+        <script src="app/controllers/print_controller.js"></script>
     </body>
 </html>
 

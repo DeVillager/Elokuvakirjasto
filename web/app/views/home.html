@@ -1,0 +1,39 @@
+<div id="list-movie-container">
+    
+    
+    
+    <div>
+        <h2>Lisää kurssi</h2>
+
+        <label>Kurssin nimi</label><br>
+        <input ng-model="nimi" />
+
+        <table>
+            <tbody id="list">
+                <tr>
+                    <td><label>Tehtävä</label></td>
+                    <td><label>maksimipisteet</label></td>
+                </tr>
+                <tr class="item inactive">
+                    <td><input name="multifield" class="task"/></td>
+                    <td><input name="multifield" class="maxp"/></td>
+                </tr>
+            </tbody>
+        </table>
+        <br></br>
+        <button ng-click="lisaaKurssi()" class="btn btn-primary">Lisää kurssi</button>
+    </div>
+    
+    <br></br>
+    <h2>Kurssit</h2>
+    <table class="table" >
+        <tr>
+            <th>Nimi</th>
+        </tr>
+        <tr ng-repeat="course in courses">
+            <th><a ng-href="#/courses/{{course.$id}}" id="{{course.nimi}}">{{course.nimi}}</a></th>
+        </tr>
+    </table>
+
+</div>
+

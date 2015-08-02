@@ -1,4 +1,4 @@
-MovieApp.service('APIService', function($http){
+CourseApp.service('APIService', function($http){
   this.findMovie = function(name, year){
     return $http.get('http://www.omdbapi.com', { params: { s: name, y:year } });
   }

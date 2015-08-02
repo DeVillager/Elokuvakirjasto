@@ -1,4 +1,4 @@
-MovieApp.controller('AddController', function ($scope, FirebaseService, $location) {
+CourseApp.controller('AddController', function ($scope, FirebaseService, $location) {
     
 //    if (!currentAuth) {
 ////        alert(currentAuth);

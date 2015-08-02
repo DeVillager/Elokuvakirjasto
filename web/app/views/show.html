@@ -1,14 +1,37 @@
+<h2> Kurssin {{course.nimi}} tulosten kirjaaminen</h2>
 
-<h1>{{movie.nimi}}</h1>
-<ul>
-    <li><strong>Ohjaaja:</strong> {{movie.ohjaaja}}</li>
-    <li><strong>Julkaisuvuosi:</strong> {{movie.vuosi}}</li>
-</ul>
+<table class="table">
+    <tbody id="list">
 
-<div>
-    {{movie.kuvaus}}
-</div>
+        <tr>
+            <td><label>Opiskelija</label></td>
+            <td ng-repeat="task in course.tehtavat" class="task">{{task.nimi}}</td>
+        <tr>
+
+        <tr class="item inactive">
+            <td><input name="multifield" class="stud"/></td>
+            <td ng-repeat="task in course.tehtavat"><input type="text" name="multifield" class="numb" size="1"/>/<span class="maxp">{{task.maxp}}</span></td>
+        </tr>
+    </tbody>
+</table>
+
 <br></br>
-<button ng-click="edit(movie)" class="btn btn-primary">Muokkaa</button>
+<h2> Kurssin {{course.nimi}} tämänhetkinen tulostaulukko</h2>
+<table class="table">
+    <tbody>
+        <tr>
+            <td><label>Opiskelija</label></td>
+            <td ng-repeat="task in course.tehtavat"><label>{{task.nimi}}</label></td>
+        <tr>
+        <tr ng-repeat="student in course.students">
+            <td>{{student.nimi}}</td>
+            <td ng-repeat="task in student.tehtavat">{{task.gotp}}/{{task.maxp}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<br></br>
+<button ng-click="tulosta()" class="btn btn-primary">Tulosta</button>
 <button ng-click="return()" class="btn btn-default">Takaisin</button>
 

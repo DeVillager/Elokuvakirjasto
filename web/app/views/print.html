@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>printsivu</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <body>
+        <h1>Tulostusnäkymä</h1>
+
+        <table class="table">
+            <tbody id="list">
+                <tr>
+                    <td><label>Opiskelija</label></td>
+                    <td ng-repeat="task in course.tehtavat"><label>{{task.nimi}}</label></td>
+                <tr>
+
+                <tr class="item inactive" ng-repeat="student in course.students">
+                    <td>{{student.nimi}}</td>
+                    <td ng-repeat="task in student.tehtavat">{{task.gotp}}/{{task.maxp}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

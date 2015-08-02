@@ -1,4 +1,4 @@
-MovieApp.service('AuthenticationService', function ($firebase, $firebaseAuth) {
+CourseApp.service('AuthenticationService', function ($firebase, $firebaseAuth) {
     var firebaseRef = new Firebase('https://blistering-heat-4023.firebaseio.com/users');
     var firebaseAuth = $firebaseAuth(firebaseRef);
 
